@@ -100,4 +100,22 @@ def main():
             print(*read_file(file_name))
 
 
+file_name_copy = 'phone_copy.csv'
+
+
+def copy_line(file_name, file_name_copy, line_number):
+    with open(file_name, 'r') as file:
+        lines = file.readlines()
+    if line_number < 1 or line_number > len(lines):
+        print('Некорректный номер строки')
+        return
+    with open(file_name_copy, 'w') as file:
+        file.write(lines[line_number - 1])
+
+
+    print("Копирование строки успешно выполнено")
+
+
 main()
+line_number = int(input("Введите номер строки для копирования: "))
+copy_line(file_name, file_name_copy, line_number)
