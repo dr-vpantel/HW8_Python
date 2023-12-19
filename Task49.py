@@ -10,13 +10,16 @@
 from os.path import exists
 from csv import DictReader, DictWriter
 
+
 class LenNumberError(Exception):
     def __init__(self, txt):
         self.txt = txt
 
+
 class NameError(Exception):
     def __init__(self, txt):
         self.txt = txt
+
 
 def get_info():
     is_valid_name = False
@@ -31,7 +34,6 @@ def get_info():
         except NameError as err:
             print(err)
             continue
-
 
     is_valid_phone = False
     while not is_valid_phone:
